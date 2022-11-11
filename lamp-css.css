@@ -11,6 +11,10 @@ COLOR PALETTE
 */
 @import url("https://fonts.cdnfonts.com/css/new-super-mario-font-u");
 
+:root {
+  --switch-color: #000;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -138,8 +142,8 @@ body {
 .switch {
   position: absolute;
   height: 0.4vmin;
-  width: 11vmin;
-  background: #000000;
+  width: 10vmin;
+  background: var(--switch-color);
   transform-origin: 0 0;
   transform: rotate(90deg);
   left: 50vmin;
@@ -148,17 +152,64 @@ body {
   cursor: pointer;
 }
 
+.switch::after {
+  content: "";
+  position: absolute;
+  height: 1.2vmin;
+  width: 1.2vmin;
+  background-color: var(--switch-color);
+  border-radius: 50%;
+  left: 9.5vmin;
+  bottom: -0.5vmin;
+}
+
 .light {
   width: 25vmin;
-  height: 35vmin;
+  height: 25vmin;
   position: absolute;
-  background: #fff6dd;
-  top: 22vmin;
+  background: rgb(248, 248, 169, 0.5);
+  top: 25vmin;
   left: 34.5vmin;
-  clip-path: polygon(25% 0%, 65% 0%, 100% 100%, 0% 100%);
-  transition: 0.1s ease-in;
+  clip-path: polygon(25% 0%, 70% 0%, 100% 100%, 0% 100%);
 }
 
 #light {
   visibility: hidden;
+}
+
+.table-top {
+  position: absolute;
+  width: 50vmin;
+  height: 10vmin;
+  background: #9a4f17;
+  top: 41.5vmin;
+  transform: skewX(50deg);
+}
+
+.table-mid {
+  position: absolute;
+  width: 50vmin;
+  height: 10vmin;
+  background: #9a4f17;
+  top: 43vmin;
+  transform: skewX(50deg);
+}
+
+.table-left {
+  position: absolute;
+  background: #b66324;
+  width: 1.7vmin;
+  height: 12vmin;
+  top: 43vmin;
+  left: 24vmin;
+  transform: skewY(39deg) rotate(90deg) translateY(2.2vmin);
+}
+
+.table-front {
+  position: absolute;
+  background: #b66324;
+  height: 1.6vmin;
+  width: 50vmin;
+  top: 51.45vmin;
+  left: 28.5vmin;
 }

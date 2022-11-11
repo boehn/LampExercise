@@ -1,9 +1,16 @@
 function lightSwitch() {
-  var change = document.getElementById("light");
+  let light = document.getElementById("light-botton");
 
-  if (change.style.visibility === "hidden") {
-    change.style.visibility = "visible";
+  let lightSwitch = document.getElementById("switch");
+  var switchColor = window
+    .getComputedStyle(document.querySelector(".switch"))
+    .getPropertyValue("color");
+
+  if (light.style.visibility === "hidden") {
+    light.style.visibility = "visible";
+    lightSwitch.style.setProperty("--switch-color", "#444");
   } else {
-    change.style.visibility = "hidden";
+    light.style.visibility = "hidden";
+    lightSwitch.style.setProperty("--switch-color", switchColor);
   }
 }

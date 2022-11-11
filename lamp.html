@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="lamp-css.css" />
+    <link
+      href="https://fonts.cdnfonts.com/css/new-super-mario-font-u"
+      rel="stylesheet"
+    />
+    <script type="text/javascript" src="lamp.js"></script>
+
+    <title>Lâmpada</title>
+  </head>
+  <body>
+    <div class="canvas">
+      <div class="circle">
+        <div class="light" id="light"></div>
+        <div class="cube">
+          <div class="face back-cube-face"></div>
+          <div class="face left-cube-face">
+            <p class="question-left"></p>
+          </div>
+          <div class="face right-cube-face"></div>
+          <div class="face front-cube-face">
+            <p class="question-front">?</p>
+          </div>
+        </div>
+
+        <div class="base-lamp-botton"></div>
+        <div class="base-lamp"></div>
+        <div class="base-lamp-top"></div>
+        <div class="stick-base"></div>
+        <div class="switch" onclick="lightSwitch()"></div>
+      </div>
+    </div>
+  </body>
+</html>

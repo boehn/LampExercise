@@ -1,16 +1,21 @@
 function lightSwitch() {
-  let light = document.getElementById("light-botton");
+  // light
+  let light = document.querySelectorAll(".light");
+  let lightElements = Array.from(light);
 
-  let lightSwitch = document.getElementById("switch");
-  var switchColor = window
-    .getComputedStyle(document.querySelector(".switch"))
+  // switch light
+  let lightSwitch = document.querySelector(".switch");
+  let switchColor = window
+    .getComputedStyle(lightSwitch)
     .getPropertyValue("color");
 
-  if (light.style.visibility === "hidden") {
-    light.style.visibility = "visible";
-    lightSwitch.style.setProperty("--switch-color", "#444");
-  } else {
-    light.style.visibility = "hidden";
-    lightSwitch.style.setProperty("--switch-color", switchColor);
-  }
+  lightElements.forEach((element) => {
+    if (element.style.visibility === "hidden") {
+      element.style.visibility = "visible";
+      lightSwitch.style.setProperty("--switch-color", "#444");
+    } else {
+      element.style.visibility = "hidden";
+      lightSwitch.style.setProperty("--switch-color", switchColor);
+    }
+  });
 }

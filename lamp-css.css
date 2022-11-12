@@ -1,3 +1,5 @@
+/* TODO: ORGANIZE THIS CODE */
+
 /* 
 COLOR PALETTE
 #FECA30
@@ -13,6 +15,11 @@ COLOR PALETTE
 
 :root {
   --switch-color: #000;
+  --back-cube-face-color: #ffd24c;
+  --left-cube-face-color: #fdd86a;
+  --right-cube-face-color: #f3b806;
+  --front-cube-face-color: #feca30;
+  --light-color: #f8f8a980;
 }
 
 * {
@@ -63,8 +70,14 @@ body {
   color: #fff5db;
 }
 
+.light-top {
+  width: 15vmin;
+  height: 1.8vmin;
+  transform: translateY(-1.8vmin) skewX(60deg) translateX(-3.3vmin);
+}
+
 .back-cube-face {
-  background: #ffd24c;
+  background: var(--back-cube-face-color);
   height: 22.5vmin;
   width: 22.5vmin;
   transform-origin: 0 0;
@@ -74,14 +87,14 @@ body {
 }
 
 .left-cube-face {
-  background: #fdd86a;
+  background: var(--left-cube-face-color);
   width: 15vmin;
   height: 3vmin;
   transform: skewY(30deg) rotate(90deg);
 }
 
 .right-cube-face {
-  background: #f3b806;
+  background: var(--right-cube-face-color);
   width: 15vmin;
   height: 3vmin;
   transform: skewY(30deg) rotate(-90deg) translateY(12vmin)
@@ -89,7 +102,7 @@ body {
 }
 
 .front-cube-face {
-  background: #feca30;
+  background: var(--front-cube-face-color);
   height: 15vmin;
   width: 15vmin;
 }
@@ -163,18 +176,18 @@ body {
   bottom: -0.5vmin;
 }
 
-.light {
+.light-bottom {
   width: 25vmin;
   height: 25vmin;
   position: absolute;
-  background: rgb(248, 248, 169, 0.5);
   top: 25vmin;
   left: 34.5vmin;
   clip-path: polygon(25% 0%, 70% 0%, 100% 100%, 0% 100%);
 }
 
-#light {
+.light {
   visibility: hidden;
+  background: var(--light-color);
 }
 
 .table-top {
